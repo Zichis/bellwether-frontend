@@ -9,7 +9,7 @@
         <div class="flex justify-center items-center h-full">
           <div>
             <h3 class="text-4xl text-white font-light mb-5">
-              Get started managing your tasks with our new features
+              Manage waste efficiently with our features
             </h3>
             <ul class="pl-5">
               <li class="text-2xl mb-4 animate-1">
@@ -18,7 +18,7 @@
                   class="text-green-400 mr-2"
                 ></font-awesome-icon>
                 <span class="font-extralight text-white">
-                  Track Personal Tasks
+                  Monitor waste status on your dashboard
                 </span>
               </li>
               <li class="text-2xl mb-4 animate-2">
@@ -27,7 +27,7 @@
                   class="text-green-400 mr-2"
                 ></font-awesome-icon>
                 <span class="font-extralight text-white">
-                  Create Projects
+                  Manage payment history
                 </span>
               </li>
               <li class="text-2xl mb-4 animate-3">
@@ -36,7 +36,7 @@
                   class="text-green-400 mr-2"
                 ></font-awesome-icon>
                 <span class="font-extralight text-white">
-                  Invite friends for collaboration
+                  Make payments efficiently
                 </span>
               </li>
             </ul>
