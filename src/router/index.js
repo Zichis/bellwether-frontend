@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
+import Dashboard from "../views/Dashboard";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,18 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/app",
+    name: "App",
+    component: () => import("../views/App.vue"),
+    children: [
+      {
+        path: "dashboard",
+        name: "Dashboard",
+        component: Dashboard,
+      },
+    ],
   },
   {
     path: "/auth/",
