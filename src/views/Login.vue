@@ -74,7 +74,7 @@ export default {
         .then((response) => {
           localStorage.setItem("bellwether_token", response.data.token);
           //this.$store.dispatch("user", response.data.user);
-          router.push("/");
+          router.push("/app/dashboard");
         })
         .catch(
           (error) => (this.loginErrorMessage = error.response.data.message)
