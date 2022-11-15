@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard";
+import CustomerList from "../views/customers/List";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,17 @@ const routes = [
         path: "dashboard",
         name: "Dashboard",
         component: Dashboard,
+      },
+      {
+        path: "customers",
+        component: () => import("../views/customers/App.vue"),
+        children: [
+          {
+            path: "/",
+            name: "CustomerList",
+            component: CustomerList,
+          },
+        ],
       },
     ],
   },
