@@ -8,8 +8,11 @@
       />
     </div>
     <div class="p-5">
-      <router-link to="/app/dashboard" class="text-gray-200">
-        Dashboard
+      <router-link to="/app/dashboard" class="text-gray-200 block my-5">
+        <font-awesome-icon icon="th-large" class="mr-5" />Dashboard
+      </router-link>
+      <router-link to="/app/customers" class="text-gray-200 block my-5">
+        <font-awesome-icon icon="users" class="mr-5" />Customers
       </router-link>
     </div>
   </div>
@@ -27,4 +30,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.router-link-active {
+  color: #bf8a8a;
+}
+</style>
