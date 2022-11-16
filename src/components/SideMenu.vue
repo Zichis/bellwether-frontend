@@ -9,10 +9,12 @@
     </div>
     <div class="p-5">
       <router-link to="/app/dashboard" class="text-gray-200 block my-5">
-        <font-awesome-icon icon="th-large" class="mr-5" />Dashboard
+        <font-awesome-icon icon="th-large" class="lg:mr-5" />
+        <span class="hidden lg:inline">Dashboard</span>
       </router-link>
       <router-link to="/app/customers" class="text-gray-200 block my-5">
-        <font-awesome-icon icon="users" class="mr-5" />Customers
+        <font-awesome-icon icon="users" class="lg:mr-5" />
+        <span class="hidden lg:inline">Customers</span>
       </router-link>
     </div>
   </div>
