@@ -6,10 +6,16 @@ import store from "./store";
 import "./css/main.css";
 import "./config/axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faThLarge, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faThLarge,
+  faUsers,
+  faEye,
+  faUserPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faBars, faThLarge, faUsers);
+library.add(faBars, faThLarge, faUsers, faEye, faUserPlus);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
