@@ -32,8 +32,4 @@ export default {
 };
 </script>
 
-<style>
-.router-link-active {
-  color: #bf8a8a;
-}
-</style>
+<style></style>
