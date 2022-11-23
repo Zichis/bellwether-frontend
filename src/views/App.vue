@@ -1,7 +1,9 @@
 <template>
-  <div class="flex min-h-screen">
-    <SideMenu />
-    <router-view class="flex-1"></router-view>
+  <div class="flex h-screen">
+    <SideMenu class="flex-shrink-0" />
+    <router-view
+      class="flex-1 overflow-x-hidden overflow-y-scroll"
+    ></router-view>
   </div>
 </template>
 
