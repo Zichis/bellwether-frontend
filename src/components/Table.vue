@@ -41,11 +41,12 @@
           <td class="py-4 px-6">{{ item.address_1 }}</td>
           <td class="py-4 px-6">{{ item.phone_number }}</td>
           <td class="flex items-center py-4 px-6 space-x-3">
-            <a
-              href="#"
+            <button
+              @click="$emit('edit', item.id)"
               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >Edit</a
             >
+              Edit
+            </button>
             <button
               @click="$emit('delete', item.id)"
               class="font-medium text-red-600 dark:text-red-500 hover:underline"
