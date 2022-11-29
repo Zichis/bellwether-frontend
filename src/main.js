@@ -3,6 +3,8 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import VueSweetalert2 from "vue-sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 import "./css/main.css";
 import "./config/axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -17,6 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faBars, faThLarge, faUsers, faEye, faUserPlus);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.use(VueSweetalert2);
 
 Vue.config.productionTip = false;
 
