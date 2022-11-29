@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1 class="mb-10 font-semibold text-3xl">Customers</h1>
-    <Table :tableData="customers" :titles="titles" @delete="deleteCustomer" />
+    <Table
+      :tableData="customers"
+      :titles="titles"
+      @delete="deleteCustomer"
+      @edit="editCustomer"
+    />
   </div>
 </template>
 
@@ -10,6 +15,7 @@ import CustomerService from "../../services/CustomerService";
 import Table from "../../components/Table.vue";
 import DisplayAlert from "../../functions/DisplayAlert";
 import SetAlert from "../../functions/SetAlert";
+import router from "../../router";
 export default {
   components: { Table },
   data() {
@@ -40,6 +46,9 @@ export default {
           DisplayAlert(this.$swal);
         })
         .catch((error) => (this.errorMessage = error.response.data.message));
+    },
+    editCustomer(id) {
+      router.push(`/app/customers/${id}/edit`);
     },
   },
 };
