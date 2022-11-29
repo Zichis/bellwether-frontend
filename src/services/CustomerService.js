@@ -32,4 +32,13 @@ export default {
       },
     });
   },
+
+  update(id, editCustomerForm) {
+    console.log("hi");
+    return httpClient.patch(`/customers/${id}`, editCustomerForm, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("bellwether_token"),
+      },
+    });
+  },
 };
