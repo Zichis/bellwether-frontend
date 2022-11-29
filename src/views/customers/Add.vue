@@ -112,6 +112,7 @@
 <script>
 import CustomerService from "../../services/CustomerService";
 import router from "../../router";
+import SetAlert from "../../functions/SetAlert";
 
 export default {
   data() {
@@ -134,6 +135,7 @@ export default {
       CustomerService.add(this.addCustomerForm)
         .then((response) => {
           console.log(response);
+          SetAlert("Saved", "You have added a new customer!", "success");
           router.push("/app/customers");
         })
         .catch(

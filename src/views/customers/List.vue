@@ -8,6 +8,7 @@
 <script>
 import CustomerService from "../../services/CustomerService";
 import Table from "../../components/Table.vue";
+import DisplayAlert from "../../functions/DisplayAlert";
 export default {
   components: { Table },
   data() {
@@ -24,6 +25,9 @@ export default {
         this.customers = customers;
       })
       .catch((error) => (this.errorMessage = error.response.data.message));
+  },
+  mounted() {
+    DisplayAlert(this.$swal);
   },
 };
 </script>
