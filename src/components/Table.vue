@@ -46,11 +46,12 @@
               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
               >Edit</a
             >
-            <a
-              href="#"
+            <button
+              @click="$emit('delete', item.id)"
               class="font-medium text-red-600 dark:text-red-500 hover:underline"
-              >Remove</a
             >
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
