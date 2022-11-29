@@ -16,4 +16,12 @@ export default {
       },
     });
   },
+
+  delete(id) {
+    return httpClient.delete(`/customers/${id}`, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("bellwether_token"),
+      },
+    });
+  },
 };
