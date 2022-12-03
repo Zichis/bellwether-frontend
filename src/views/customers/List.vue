@@ -6,6 +6,7 @@
       :titles="titles"
       @delete="deleteCustomer"
       @edit="editCustomer"
+      @view="viewCustomer"
     />
   </div>
 </template>
@@ -49,6 +50,9 @@ export default {
     },
     editCustomer(id) {
       router.push(`/app/customers/${id}/edit`);
+    },
+    viewCustomer(id) {
+      router.push(`/app/customers/${id}`);
     },
   },
 };

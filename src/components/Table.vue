@@ -35,7 +35,7 @@
             scope="row"
             class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            {{ item.name }}
+            <button @click="$emit('view', item.id)">{{ item.name }}</button>
           </th>
           <td class="py-4 px-6">{{ item.email }}</td>
           <td class="py-4 px-6">{{ item.address_1 }}</td>
