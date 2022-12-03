@@ -6,6 +6,7 @@ import Dashboard from "../views/Dashboard";
 import CustomerList from "../views/customers/List";
 import CustomerAdd from "../views/customers/Add";
 import CustomerEdit from "../views/customers/Edit";
+import CustomerShow from "../views/customers/Show";
 
 Vue.use(VueRouter);
 
@@ -53,6 +54,11 @@ const routes = [
             name: "CustomerEdit",
             component: CustomerEdit,
           },
+          {
+            path: ":id",
+            name: "CustomerShow",
+            component: CustomerShow,
+          }
         ],
       },
     ],
