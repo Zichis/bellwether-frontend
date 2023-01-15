@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Dashboard</h1>
+  <div class="p-5">
+    <h1 class="text-3xl">Welcome</h1>
   </div>
 </template>
 
