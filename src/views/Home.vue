@@ -54,7 +54,7 @@
     <div class="banner h-screen pt-20 flex items-center justify-center">
       <div class="text-center px-10">
         <h1 class="text-4xl lg:text-7xl font-light text-yellow-400">
-          YOU HAVE WASTE RIGHT?
+          YOU HAVE WASTE RIGHT???
         </h1>
         <h1 class="font-bold text-4xl text-yellow-400">WE REMOVE</h1>
       </div>
