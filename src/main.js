@@ -16,6 +16,7 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import 'animate.css';
 
 library.add(faBars, faThLarge, faUsers, faEye, faUserPlus);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
