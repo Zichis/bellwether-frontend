@@ -49,7 +49,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "AuthPage",
+};
 </script>
 
 <style></style>

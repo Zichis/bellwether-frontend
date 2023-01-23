@@ -2,6 +2,10 @@
   <div>Hi there</div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "ShowCustomer",
+}
+</script>
 
 <style></style>
