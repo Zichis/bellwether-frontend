@@ -8,6 +8,7 @@ import CustomerList from "../views/customers/List";
 import CustomerAdd from "../views/customers/Add";
 import CustomerEdit from "../views/customers/Edit";
 import CustomerShow from "../views/customers/Show";
+import PageNotFound from "../views/PageNotFound";
 
 Vue.use(VueRouter);
 
@@ -93,6 +94,7 @@ const routes = [
       },
     ],
   },
+  { path: "*", component: PageNotFound }
 ];
 
 const router = new VueRouter({
