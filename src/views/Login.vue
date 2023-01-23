@@ -59,6 +59,7 @@
 import AuthService from "../services/AuthService";
 import router from "../router";
 export default {
+  name: "UserLogin",
   data() {
     return {
       loginForm: {

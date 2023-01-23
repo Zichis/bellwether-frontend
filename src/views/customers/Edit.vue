@@ -102,6 +102,7 @@ import CustomerService from "../../services/CustomerService";
 import router from "../../router";
 import SetAlert from "../../functions/SetAlert";
 export default {
+  name: "Edit Customer",
   data() {
     return {
       customer: {},

@@ -284,7 +284,7 @@
 
 <script>
 export default {
-  name: "Home",
+  name: "HomePage",
   components: {},
 };
 </script>

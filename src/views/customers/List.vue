@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mb-10 font-semibold text-3xl">Customers</h1>
-    <Table
+    <CustomerTable
       :tableData="customers"
       :titles="titles"
       @delete="deleteCustomer"
@@ -13,12 +13,13 @@
 
 <script>
 import CustomerService from "../../services/CustomerService";
-import Table from "../../components/Table.vue";
+import CustomerTable from "../../components/Table.vue";
 import DisplayAlert from "../../functions/DisplayAlert";
 import SetAlert from "../../functions/SetAlert";
 import router from "../../router";
 export default {
-  components: { Table },
+  name: "ListCustomer",
+  components: { CustomerTable },
   data() {
     return {
       customers: [],

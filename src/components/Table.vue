@@ -62,6 +62,7 @@
 
 <script>
 export default {
+  name: "TableComponent",
   props: ["tableData", "titles"],
 };
 </script>

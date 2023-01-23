@@ -115,6 +115,7 @@ import router from "../../router";
 import SetAlert from "../../functions/SetAlert";
 
 export default {
+  name: "AddCustomer",
   data() {
     return {
       addCustomerForm: {
