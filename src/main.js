@@ -17,10 +17,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import 'animate.css';
+import { MotionPlugin } from "@vueuse/motion";
 
 library.add(faBars, faThLarge, faUsers, faEye, faUserPlus);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.use(VueSweetalert2);
+Vue.use(MotionPlugin);
 
 Vue.config.productionTip = false;
 
