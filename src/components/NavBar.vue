@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <nav
-      class="fixed flex flex-wrap items-center py-2 justify-between w-full md:py-0 px-4 text-lg text-gray-700 bg-white"
+      class="fixed z-50 flex flex-wrap items-center py-2 justify-between w-full md:py-0 px-4 text-lg text-gray-700 bg-white"
     >
       <router-link to="/">
         <img
@@ -10,7 +10,7 @@
           alt="bellwether_logo"
         />
       </router-link>
-      <button class="h-6 w-6 md:hidden block border rounded" @click="toggleMenu">
+      <button class="px-3 shadow md:hidden block border rounded" @click="toggleMenu">
         <font-awesome-icon icon="bars" />
       </button>
       <div class="w-full md:flex md:items-center md:w-auto" id="menu" :class="{ hidden: isHidden }">
