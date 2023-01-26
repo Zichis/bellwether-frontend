@@ -294,7 +294,7 @@ export default {
   background: linear-gradient(to right,
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)),
-    url("../../assets/recycle.jpeg");
+    url("../../assets/bg.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
 }
