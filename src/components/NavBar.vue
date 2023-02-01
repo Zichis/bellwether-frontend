@@ -39,6 +39,11 @@
               >Contact Us</router-link
             >
           </li>
+          <li>
+            <router-link to="/get-started" class="md:p-4 py-2 block text-yellow-600 md:bg-yellow-600 md:text-yellow-200 md:hover:text-white"
+              >Register</router-link
+            >
+          </li>
         </ul>
       </div>
     </nav>
