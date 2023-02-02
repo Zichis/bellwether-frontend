@@ -9,13 +9,13 @@
           <div class="flex flex-wrap">
             <div class="w-full md:w-1/2">
               <div class="m-2">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name <span class="text-red-500">*</span></label>
                 <input type="text" name="name" v-model="getStartedForm.name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. John Doe" required>
               </div>
             </div>
             <div class="w-full md:w-1/2">
               <div class="m-2">
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email <span class="text-red-500">*</span></label>
                 <input type="email" name="email" v-model="getStartedForm.email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. johndoe@myemail.com" required>
               </div>
             </div>
@@ -23,7 +23,7 @@
           <div class="flex flex-wrap">
             <div class="w-full">
               <div class="m-2">
-                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone <span class="text-red-500">*</span></label>
                 <input type="text" name="phone" v-model="getStartedForm.phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 08000000000" required>
               </div>
             </div>
@@ -32,7 +32,7 @@
           <div class="flex flex-wrap">
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="address_1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primary Address</label>
+                <label for="address_1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primary Address <span class="text-red-500">*</span></label>
                 <input type="text" name="address_1" v-model="getStartedForm.address_1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 221B Baker Street" required>
               </div>
             </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="location_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location Type</label>
+                <label for="location_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location Type <span class="text-red-500">*</span></label>
                 <select name="location_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.location_type" required>
                   <option value="">Select Location Type</option>
                   <option value="residential">Residential</option>
@@ -56,7 +56,7 @@
           <div class="flex flex-wrap">
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State</label>
+                <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State <span class="text-red-500">*</span></label>
                 <select name="state" @change="onSelectState($event)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.state" required>
                   <option value="">Select state</option>
                   <option :value="state" v-for="state in states" v-bind:key="state.id">{{ state }}</option>
@@ -65,7 +65,7 @@
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="local_government" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Government</label>
+                <label for="local_government" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Government <span class="text-red-500">*</span></label>
                 <select name="local_government" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.local_government" required>
                   <option value="">Select Local Government</option>
                   <option :value="lga" v-for="lga in local_governments" v-bind:key="lga.id">{{ lga }}</option>
@@ -84,18 +84,18 @@
             <div class="w-full md:w-1/3">
               <div class="m-2">
                 <label for="profile_picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Picture</label>
-                <input type="file" name="profile_picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <input type="file" name="profile_picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               </div>
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="id_photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identification Photo</label>
+                <label for="id_photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identification Photo <span class="text-red-500">*</span></label>
                 <input type="file" name="id_photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="signature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Signature</label>
+                <label for="signature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Signature <span class="text-red-500">*</span></label>
                 <input type="file" name="signature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
             </div>
@@ -104,12 +104,12 @@
           <div class="flex flex-wrap">
             <div class="w-full md:w-1/2">
               <div class="m-2">
-                <label for="service_plan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Service Plan</label>
+                <label for="service_plan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Service Plan <span class="text-red-500">*</span></label>
                 <select name="service_plan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.service_plan" required>
                   <option value="">Select Service Plan</option>
-                  <option value="gold">Gold</option>
-                  <option value="silver">Silver</option>
-                  <option value="silver">Bronze</option>
+                  <option value="gold">Gold - 10,000</option>
+                  <option value="silver">Silver - 6,500</option>
+                  <option value="silver">Bronze - 3,500</option>
                 </select>
               </div>
             </div>
@@ -126,7 +126,7 @@
               View Service Agreement
             </button>
             <label for="terms" class="block mt-2 mb-5">
-              <input type="checkbox" id="terms" name="terms">
+              <input type="checkbox" id="terms" name="terms" required>
               I have read service agreement.
             </label>
             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SUBMIT</button>
@@ -137,7 +137,7 @@
         <div v-if="isModalOpen" class="fixed overflow-y-scroll pt-20 top-0 left-0 h-screen w-screen" style="background: rgba(0,0,0,0.85)">
           <div class="relative bg-white p-5 rounded-lg shadow-lg">
             <div class="flex justify-between items-center">
-              <h1 class="font-bold text-2xl">Service Agreement</h1>
+              <h1 class="font-bold text-2xl">Waste Handling Policy And Responsibility of Customers</h1>
               <button @click="isModalOpen = false" type="button" class="block mb-2 px-5 py-2.5 bg-red-500 hover:bg-red-700 text-white shadow rounded-lg">
                 Close
               </button>
@@ -162,7 +162,27 @@
               <li class="list-disc my-2">Waste collection bins and bags should be placed under shelter to avoid rain dropping into them.</li>
               <li class="list-disc my-2">All payment should be made to the bellwether recycling limited bank account provided; no payment should be made to any individual</li>
               <li class="list-disc my-2">If service charge payment is not made by the due date, a 10% late payment fee will be charged daily.</li>
+              <li class="list-disc my-2">Use your registration tag number as the depositor's name when paying your garbage collection service charge.</li>
+              <li class="list-disc my-2">Additional services and significant bulk garbage will incur additional charges.</li>
+              <li class="list-disc my-2">To schedule a collection of bulk waste, the customer should contact Bellwether Recycling Limited.</li>
+              <li class="list-disc my-2">Fridays and Saturdays are waste pickup days</li>
+              <li class="list-disc my-2">Place the trash outside of your gate, in front of your house, so that it may be picked up.</li>
+              <li class="list-disc my-2">10% off your service charge for a month when you refer ten (10) users within a month.</li>
+              <li class="list-disc my-2">To indicate a referral, a client should use the referral option on the registration portal when registering the new customer and enter their registration tag number.</li>
+              <li class="list-disc my-2">The customer is obligated to update their locations in case of change of address . For better servicing.</li>
             </ul>
+            <p class="font-bold text-red-600">Agreeing implies you consent to abide by Bellwether Recycling Limited waste handling policies</p>
+            <h2 class="font-bold my-2 text-red-600">Payment Details</h2>
+            <div class="text-3xl font-thin text-red-600">
+              <p>Account Number: 000143629</p>
+              <p>Account Name: Bellwether Recycling Limited</p>
+              <p>Globus Bank</p>
+            </div>
+            <div class="flex justify-center py-2 mt-2 border-t-2">
+              <button @click="isModalOpen = false" type="button" class="block mb-2 px-5 py-2.5 bg-red-500 hover:bg-red-700 text-white shadow rounded-lg">
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </Teleport>
