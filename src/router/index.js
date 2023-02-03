@@ -9,6 +9,8 @@ import CustomerList from "../views/customers/List";
 import CustomerAdd from "../views/customers/Add";
 import CustomerEdit from "../views/customers/Edit";
 import CustomerShow from "../views/customers/Show";
+import PendingApproval from "../views/pending-customers/PendingApproval";
+import PendingApprovalView from "../views/pending-customers/PendingApprovalView";
 import PageNotFound from "../views/PageNotFound";
 
 Vue.use(VueRouter);
@@ -86,6 +88,22 @@ const routes = [
           }
         ],
       },
+      {
+        path: "pending-approvals",
+        component: () => import("../views/pending-customers/App.vue"),
+        children: [
+          {
+            path: "/",
+            name: "PendingApproval",
+            component: PendingApproval,
+          },
+          {
+            path: ":id",
+            name: "PendingApprovalView",
+            component: PendingApprovalView,
+          },
+        ],
+      }
     ],
   },
   {
