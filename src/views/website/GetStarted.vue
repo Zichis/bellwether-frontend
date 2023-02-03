@@ -83,20 +83,20 @@
           <div class="flex flex-wrap">
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="profile_picture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Picture</label>
-                <input type="file" name="profile_picture" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <label for="avatar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Picture</label>
+                <input @change="onSelectProfilePicture()" ref="avatar" type="file" name="avatar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               </div>
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
                 <label for="id_photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identification Photo <span class="text-red-500">*</span></label>
-                <input type="file" name="id_photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <input @change="onSelectIdPhoto()" ref="id_photo" type="file" name="id_photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
                 <label for="signature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Signature <span class="text-red-500">*</span></label>
-                <input type="file" name="signature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <input @change="onSelectSignature()" ref="signature" type="file" name="signature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
               </div>
             </div>
           </div>
@@ -191,6 +191,9 @@
   
   <script>
   import statesData from "../../data/states.json";
+  import RegistrationService from "../../services/RegistrationService";
+  import _ from 'lodash';
+  //import router from "../router";
   export default {
     name: "GetStartedPage",
     components: {},
@@ -211,6 +214,9 @@
         states: [],
         local_governments: [],
         isModalOpen: false,
+        avatar: null,
+        id_photo: null,
+        signature: null,
       };
     },
     mounted() {
@@ -221,7 +227,24 @@
     },
     methods: {
       apply() {
-        console.log(this.getStartedForm);
+        let formData = new FormData();
+        formData.append('avatar', this.avatar);
+        formData.append('id_photo', this.id_photo);
+        formData.append('signature', this.signature);
+
+        _.each(this.getStartedForm, (value, key) => {
+          formData.append(key, value);
+        })
+        RegistrationService.register(formData)
+        .then((response) => {
+          //localStorage.setItem("bellwether_token", response.data.token);
+          //this.$store.dispatch("user", response.data.user);
+          //router.push("/app/dashboard");
+          console.log(response);
+        })
+        .catch(
+          (error) => (this.loginErrorMessage = error.response.data.message)
+        );
       },
       onSelectState(event) {
         let selectedState = event.target.value;
@@ -230,6 +253,15 @@
             this.local_governments = s.lgas;
           }
         });
+      },
+      onSelectProfilePicture() {
+        this.avatar = this.$refs.avatar.files[0];
+      },
+      onSelectIdPhoto() {
+        this.id_photo = this.$refs.id_photo.files[0];
+      },
+      onSelectSignature() {
+        this.signature = this.$refs.signature.files[0];
       }
     }
   };
