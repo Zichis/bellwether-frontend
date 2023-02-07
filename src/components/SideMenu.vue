@@ -16,9 +16,9 @@
         <font-awesome-icon icon="users" class="lg:mr-5" />
         <span class="hidden lg:inline">Customers</span>
       </router-link>
-      <router-link to="/app/customers" class="text-gray-200 block my-5">
+      <router-link to="/app/pending-approvals" class="text-gray-200 block my-5">
         <font-awesome-icon icon="users" class="lg:mr-5" />
-        <span class="hidden lg:inline">Subscribers</span>
+        <span class="hidden lg:inline">Pending Approvals</span>
       </router-link>
       <router-link to="/app/customers" class="text-gray-200 block my-5">
         <font-awesome-icon icon="users" class="lg:mr-5" />
