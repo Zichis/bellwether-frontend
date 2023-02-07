@@ -67,7 +67,7 @@
       <section class="mb-32 text-gray-800">
         <h2 class="text-3xl font-bold text-center text-gray-700 mb-12">Pricing</h2>
         <h3 class="text-2xl font-bold text-center text-gray-700 mb-12">Residential Location</h3>
-        <div class="bg-white rounded-md shadow-md overflow-hidden">
+        <div class="bg-white rounded-md shadow-md overflow-scroll">
           <table class="border-collapse border border-slate-400 w-full">
             <thead>
               <tr class="bg-blue-500 text-white">
@@ -116,7 +116,7 @@
           </div>
         </div>
         <h3 class="text-2xl font-bold text-center text-gray-700 mb-12 mt-10">Commercial Location</h3>
-        <div class="bg-white rounded-md shadow-md overflow-hidden">
+        <div class="bg-white rounded-md shadow-md overflow-scroll">
           <table class="border-collapse border border-slate-400 w-full">
             <thead>
               <tr class="bg-blue-500 text-white">
