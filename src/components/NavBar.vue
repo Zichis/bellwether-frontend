@@ -44,6 +44,11 @@
               >Register</router-link
             >
           </li>
+          <li>
+            <router-link to="/auth/login" class="md:p-4 py-2 block hover:text-green-400"
+              >Login</router-link
+            >
+          </li>
         </ul>
       </div>
     </nav>
