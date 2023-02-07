@@ -63,6 +63,122 @@
         solutions, startegies and services.
       </p>
     </div>
+    <div class="text-center p-5 bg-gray-300">
+      <section class="mb-32 text-gray-800">
+        <h2 class="text-3xl font-bold text-center text-gray-700 mb-12">Pricing</h2>
+        <h3 class="text-2xl font-bold text-center text-gray-700 mb-12">Residential Location</h3>
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <table class="border-collapse border border-slate-400 w-full">
+            <thead>
+              <tr class="bg-blue-500 text-white">
+                <th class="border border-slate-300 p-5">Collection Plan</th>
+                <th class="border border-slate-300 ...">Quantity of Waste Allowed per week</th>
+                <th class="border border-slate-300 ...">Quantity of Waste Allowed per month</th>
+                <th class="border border-slate-300 ...">Service charge</th>
+                <th class="border border-slate-300 ...">Cost for Every Extra Garbage bag</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-slate-300 p-5">Bronze Plan</td>
+                <td class="border border-slate-300 ...">2 Garbage Bags</td>
+                <td class="border border-slate-300 ...">8 garbage bags</td>
+                <td class="border border-slate-300 ...">₦3,500</td>
+                <td class="border border-slate-300 ...">₦500</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Silver Plan</td>
+                <td class="border border-slate-300 ...">4 Garbage Bags</td>
+                <td class="border border-slate-300 ...">16 Garbage Bags</td>
+                <td class="border border-slate-300 ...">₦6,500</td>
+                <td class="border border-slate-300 ...">₦500</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Gold Plan</td>
+                <td class="border border-slate-300 ...">6 Garbage Bags</td>
+                <td class="border border-slate-300 ...">24 Garbage Bags</td>
+                <td class="border border-slate-300 ...">₦10,000</td>
+                <td class="border border-slate-300 ...">₦500</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Custom Plan</td>
+                <td class="border border-slate-300 ..." colspan="4">Base on Agreement with Bellwether</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="p-5 text-red-600 text-left">
+            <h4 class="font-bold">Note</h4>
+            <ul>
+              <li>The custom service is for those with waste quantities that are not on the collection plan</li>
+              <li>Register five (5) persons before the 20th of every month and get 10% discount on your service charge</li>
+              <li>Pay for a full year and get 10% discount on your service charge</li>
+            </ul>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-center text-gray-700 mb-12 mt-10">Commercial Location</h3>
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <table class="border-collapse border border-slate-400 w-full">
+            <thead>
+              <tr class="bg-blue-500 text-white">
+                <th class="border border-slate-300 p-5">Collection Plan</th>
+                <th class="border border-slate-300 ...">Quantity of Waste Allowed per week</th>
+                <th class="border border-slate-300 ...">Quantity of Waste Allowed per month</th>
+                <th class="border border-slate-300 ...">Service charge</th>
+                <th class="border border-slate-300 ...">Cost for Every Extra Garbage bag</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-slate-300 p-5">Bronze Plan</td>
+                <td class="border border-slate-300 ...">120 Liters Bin x2</td>
+                <td class="border border-slate-300 ...">120 Liters x 8</td>
+                <td class="border border-slate-300 ...">₦15,000</td>
+                <td class="border border-slate-300 ...">₦3,000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Silver Plan</td>
+                <td class="border border-slate-300 ...">240 Liters Bin x2</td>
+                <td class="border border-slate-300 ...">240 Liters x 8</td>
+                <td class="border border-slate-300 ...">₦25,000</td>
+                <td class="border border-slate-300 ...">₦6,000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Gold Plan</td>
+                <td class="border border-slate-300 ...">360 Liters Bin x2</td>
+                <td class="border border-slate-300 ...">360 Liters x 8</td>
+                <td class="border border-slate-300 ...">₦35,000</td>
+                <td class="border border-slate-300 ...">₦9,000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Platnium Plan</td>
+                <td class="border border-slate-300 ...">660 Liters Bin x2</td>
+                <td class="border border-slate-300 ...">660 Liters x 8</td>
+                <td class="border border-slate-300 ...">₦45,000</td>
+                <td class="border border-slate-300 ...">₦12,000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Diamond Plan</td>
+                <td class="border border-slate-300 ...">1100 Liters Bin x2</td>
+                <td class="border border-slate-300 ...">1100liters x 8</td>
+                <td class="border border-slate-300 ...">₦55,000</td>
+                <td class="border border-slate-300 ...">₦15,000</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-300 p-5">Custom Plan</td>
+                <td class="border border-slate-300 ..." colspan="4">Base on Agreement with Bellwether</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="p-5 text-red-600 text-left">
+            <h4 class="font-bold">Note</h4>
+            <ul>
+              <li>The custom service is for those with waste quantities that are not on the collection plan</li>
+              <li>Register three (3) persons within the 20th of every month and get 10% discount on service charge</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
     <!--<div class="text-center p-5 bg-gray-600">
       <section class="mb-32 text-gray-800">
         <h2 class="text-3xl font-bold text-center text-white mb-12">Pricing</h2>
