@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/website/Home.vue";
 import About from "../views/website/About.vue";
+import Services from "../views/website/Services.vue";
 import GetStarted from "../views/website/GetStarted.vue";
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard";
@@ -30,6 +31,11 @@ const routes = [
         path: "/about",
         name: "About",
         component: About,
+      },
+      {
+        path: "/services",
+        name: "Services",
+        component: Services,
       },
       {
         path: "/get-started",
