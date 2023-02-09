@@ -7,7 +7,9 @@
           YOU HAVE WASTE RIGHT?
         </h1>
         <h1 class="animate__animated animate__slideInUp font-bold text-4xl text-yellow-400">WE REMOVE</h1>
-        <router-link to="/get-started" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-10 inline-block">Register Here</router-link>
+        <router-link to="/get-started"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 my-10 inline-block">Register
+          Here</router-link>
       </div>
     </div>
     <div class="text-center p-10 lg:p-20 bg-gray-800 text-white">
@@ -41,7 +43,8 @@
             </div>
             <h5 class="text-lg font-bold mb-4">Environmental Protection</h5>
             <p class="text-gray-500">
-              Promoting the preservation of natural resources for future generations and ensuring the safeguarding of biodiversity
+              Promoting the preservation of natural resources for future generations and ensuring the safeguarding of
+              biodiversity
             </p>
           </div>
 
@@ -51,7 +54,8 @@
             </div>
             <h5 class="text-lg font-bold mb-4">Sustainable Environmental Sanitation</h5>
             <p class="text-gray-500">
-              Protection and promotion of human health by providing a clean environment and breaking the cycle of disease.
+              Protection and promotion of human health by providing a clean environment and breaking the cycle of
+              disease.
             </p>
           </div>
         </div>
@@ -63,7 +67,7 @@
         solutions, startegies and services.
       </p>
     </div>
-    <div class="text-center p-5 bg-gray-300">
+    <!--<div class="text-center p-5 bg-gray-300">
       <section class="mb-32 text-gray-800">
         <h2 class="text-3xl font-bold text-center text-gray-700 mb-12">Pricing</h2>
         <h3 class="text-2xl font-bold text-center text-gray-700 mb-12">Residential Location</h3>
@@ -178,7 +182,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </div>-->
     <!--<div class="text-center p-5 bg-gray-600">
       <section class="mb-32 text-gray-800">
         <h2 class="text-3xl font-bold text-center text-white mb-12">Pricing</h2>
