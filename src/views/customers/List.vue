@@ -7,7 +7,11 @@
       @delete="deleteCustomer"
       @edit="editCustomer"
       @view="viewCustomer"
+      v-if="customers.length > 0"
     />
+    <div v-if="customers.length == 0" class="">
+      <p class="text-2xl font-thin">There are no customers.</p>
+    </div>
   </div>
 </template>
 
