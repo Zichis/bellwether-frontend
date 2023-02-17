@@ -48,7 +48,7 @@
                 View
               </button>
               <button
-                @click="$emit('delete', item.id)"
+                @click="$emit('approve', item.id)"
                 class="font-medium text-green-600 dark:text-green-500 hover:underline"
               >
                 Approve
