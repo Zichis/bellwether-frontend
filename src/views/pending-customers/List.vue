@@ -4,10 +4,14 @@
       <CustomerTable
         :tableData="customers"
         :titles="titles"
-        @delete="deleteCustomer"
+        @approve="approveCustomer"
         @edit="editCustomer"
         @view="viewCustomer"
+        v-if="customers.length > 0"
       />
+      <div v-if="customers.length == 0" class="">
+        <p class="text-2xl font-thin">There are no customers.</p>
+      </div>
     </div>
   </template>
   
@@ -57,6 +61,16 @@
       viewCustomer(id) {
         router.push(`/app/pending-approvals/${id}`);
       },
+      approveCustomer(id) {
+        CustomerService.approve(id)
+          .then((response) => {
+            const customers = response["data"];
+            this.customers = customers;
+            SetAlert("Approved", "Customer has been approved!", "success");
+            DisplayAlert(this.$swal);
+          })
+          .catch((error) => (this.errorMessage = error.response.data.message));
+      }
     },
   };
   </script>
