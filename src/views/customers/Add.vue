@@ -2,117 +2,140 @@
   <div>
     <h1 class="mb-10 font-semibold text-3xl">Add Customer</h1>
     <form @submit.prevent="addCustomer" class="w-full">
-      <div class="flex flex-wrap">
-        <div class="w-full lg:w-1/2 mb-5">
-          <label for="name" class="block mb-2 text-gray-500">Name</label>
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="text"
-            name="name"
-            v-model="addCustomerForm.name"
-            placeholder="Enter name"
-          />
+        <div class="shadow rounded bg-white p-5">
+          <form @submit.prevent="apply" class="w-full"></form>
+          <h1 class="font-bold text-2xl">Get Started</h1>
+          <hr class="my-2" />
+          <p class="mb-5">Fill in customer details</p>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2">
+              <div class="m-2">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name <span class="text-red-500">*</span></label>
+                <input type="text" name="name" v-model="addCustomerForm.name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. John Doe" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2">
+              <div class="m-2">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email <span class="text-red-500">*</span></label>
+                <input type="email" name="email" v-model="addCustomerForm.email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. johndoe@myemail.com" required>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/2">
+              <div class="m-2">
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone <span class="text-red-500">*</span></label>
+                <input type="text" name="phone" v-model="addCustomerForm.phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 08000000000" required>
+              </div>
+            </div>
+          </div>
+          <div class="mx-2 my-5"><hr></div>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="address_1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primary Address <span class="text-red-500">*</span></label>
+                <input type="text" name="address_1" v-model="addCustomerForm.address_1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 221B Baker Street" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="address_2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Secondary Address</label>
+                <input type="text" name="address_2" v-model="addCustomerForm.address_2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 221B Baker Street">
+              </div>
+            </div>
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="location_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location Type <span class="text-red-500">*</span></label>
+                <select name="location_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="addCustomerForm.location_type" required>
+                  <option value="">Select Location Type</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State <span class="text-red-500">*</span></label>
+                <select name="state" @change="onSelectState($event)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="addCustomerForm.state" required>
+                  <option value="">Select state</option>
+                  <option :value="state" v-for="state in states" v-bind:key="state.id">{{ state }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="local_government" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Local Government <span class="text-red-500">*</span></label>
+                <select name="local_government" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="addCustomerForm.local_government" required>
+                  <option value="">Select Local Government</option>
+                  <option :value="lga" v-for="lga in local_governments" v-bind:key="lga.id">{{ lga }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="community" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Community</label>
+                <input type="text" name="community" v-model="addCustomerForm.community" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. Alapere">
+              </div>
+            </div>
+          </div>
+          <div class="mx-2 my-5"><hr></div>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="avatar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Picture</label>
+                <input @change="onSelectProfilePicture()" ref="avatar" type="file" name="avatar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+            </div>
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="id_photo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identification Photo <span class="text-red-500">*</span></label>
+                <input @change="onSelectIdPhoto()" ref="id_photo" type="file" name="id_photo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3">
+              <div class="m-2">
+                <label for="signature" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Signature <span class="text-red-500">*</span></label>
+                <input @change="onSelectSignature()" ref="signature" type="file" name="signature" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+              </div>
+            </div>
+          </div>
+          <div class="mx-2 my-5"><hr></div>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2">
+              <div class="m-2">
+                <label for="service_plan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Service Plan <span class="text-red-500">*</span></label>
+                <select name="service_plan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="addCustomerForm.service_plan" required>
+                  <option value="">Select Service Plan</option>
+                  <option value="gold">Gold - 10,000</option>
+                  <option value="silver">Silver - 6,500</option>
+                  <option value="silver">Bronze - 3,500</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2">
+              <div class="m-2">
+                <label for="referral_code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Referral Code</label>
+                <input type="text" name="referral_code" v-model="addCustomerForm.referral_code" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 12345">
+              </div>
+            </div>
+          </div>
+          <div class="mx-2 my-5"><hr></div>
+          <div class="m-2">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SUBMIT</button>
+          </div>
         </div>
-        <div class="w-full lg:w-1/2 px-5 mb-5">
-          <label for="email" class="block mb-2 text-gray-500">Email</label>
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="email"
-            name="email"
-            v-model="addCustomerForm.email"
-            placeholder="Enter email"
-          />
-        </div>
-        <div class="w-full lg:w-1/2 mb-5">
-          <label for="email" class="block mb-2 text-gray-500"
-            >Phone Number</label
-          >
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="text"
-            name="phone_number"
-            v-model="addCustomerForm.phone_number"
-            placeholder="Enter phone number"
-          />
-        </div>
-        <div class="w-full lg:w-1/2 px-5 mb-5">
-          <label for="password" class="block mb-2 text-gray-500"
-            >Password</label
-          >
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="password"
-            name="password"
-            v-model="addCustomerForm.password"
-            placeholder="Enter password"
-          />
-        </div>
-        <div class="w-full lg:w-1/2 mb-5">
-          <label for="address_1" class="block mb-2 text-gray-500"
-            >Address 1</label
-          >
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="text"
-            name="address_1"
-            v-model="addCustomerForm.address_1"
-            placeholder="Enter primary address"
-          />
-        </div>
-        <div class="w-full lg:w-1/2 px-5 mb-5">
-          <label for="address_2" class="block mb-2 text-gray-500"
-            >Address 2</label
-          >
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="text"
-            name="address_2"
-            v-model="addCustomerForm.address_2"
-            placeholder="Enter password"
-          />
-        </div>
-        <div class="w-full lg:w-1/2 mb-5">
-          <label for="state" class="block mb-2 text-gray-500">State</label>
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="text"
-            name="state"
-            v-model="addCustomerForm.state"
-            placeholder="Enter state"
-          />
-        </div>
-        <div class="w-full lg:w-1/2 px-5 mb-5">
-          <label for="local_government" class="block mb-2 text-gray-500"
-            >Local Government</label
-          >
-          <input
-            class="px-2 py-1 w-full border-2 border-gray-300 rounded focus:outline-none focus:border-gray-400"
-            type="text"
-            name="local_government"
-            v-model="addCustomerForm.local_government"
-            placeholder="Enter local government"
-          />
-        </div>
-        <button
-          class="bg-blue-400 font-light px-3 py-1 mb-2 rounded text-blue-100 hover:text-white hover:bg-blue-500"
-          type="submit"
-        >
-          Add
-        </button>
-      </div>
-      <div v-if="errorMessage !== null">
-        <p class="my-1 px-5 text-red-400 font-light">
-          {{ errorMessage }}
-        </p>
-      </div>
-    </form>
+      </form>
   </div>
 </template>
 
 <script>
-import CustomerService from "../../services/CustomerService";
+import RegistrationService from "../../services/RegistrationService";
 import router from "../../router";
 import SetAlert from "../../functions/SetAlert";
+import statesData from "../../data/states.json";
+import _ from 'lodash';
 
 export default {
   name: "AddCustomer",
@@ -121,28 +144,67 @@ export default {
       addCustomerForm: {
         name: "",
         email: "",
-        phone_number: "",
+        phone: "",
         address_1: "",
         address_2: "",
         state: "",
         local_government: "",
-        password: "",
+        service_plan: "",
+        location_type: "",
       },
       errorMessage: null,
+      states: [],
+      local_governments: [],
+      isModalOpen: false,
+      avatar: null,
+      id_photo: null,
+      signature: null,
     };
+  },
+  mounted() {
+    statesData.forEach(s => {
+      this.states.push(s.state);
+      this.states.sort();
+    });
   },
   methods: {
     addCustomer() {
-      CustomerService.add(this.addCustomerForm)
+      let formData = new FormData();
+      formData.append('avatar', this.avatar);
+      formData.append('id_photo', this.id_photo);
+      formData.append('signature', this.signature);
+
+      _.each(this.addCustomerForm, (value, key) => {
+        formData.append(key, value);
+      })
+      
+      RegistrationService.register(formData)
         .then((response) => {
           console.log(response);
           SetAlert("Saved", "You have added a new customer!", "success");
-          router.push("/app/customers");
+          router.push("/app/pending-approvals");
         })
         .catch(
           (error) => (this.loginErrorMessage = error.response.data.message)
         );
     },
+    onSelectState(event) {
+      let selectedState = event.target.value;
+      statesData.forEach(s => {
+        if (s.state == selectedState) {
+          this.local_governments = s.lgas;
+        }
+      });
+    },
+    onSelectProfilePicture() {
+      this.avatar = this.$refs.avatar.files[0];
+    },
+    onSelectIdPhoto() {
+      this.id_photo = this.$refs.id_photo.files[0];
+    },
+    onSelectSignature() {
+      this.signature = this.$refs.signature.files[0];
+    }
   },
 };
 </script>
