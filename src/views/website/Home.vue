@@ -66,6 +66,7 @@
         Metamorphosing the waste management industry with our top notch
         solutions, startegies and services.
       </p>
+      <h3 class="my-5 text-5xl lg:text-8xl">SINCE 2017</h3>
     </div>
     <!--<div class="text-center p-5 bg-gray-300">
       <section class="mb-32 text-gray-800">
