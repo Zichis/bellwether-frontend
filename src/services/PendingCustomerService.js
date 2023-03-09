@@ -18,7 +18,7 @@ export default {
     },
 
     approve(id) {
-        return httpClient.post(`/pending-customers/${id}/approve`, {
+        return httpClient.post(`/pending-customers/${id}/approve`, {}, {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("bellwether_token"),
             },
