@@ -405,9 +405,13 @@
 </template>
 
 <script>
+import DisplayAlert from "../../functions/DisplayAlert";
 export default {
   name: "HomePage",
   components: {},
+  mounted() {
+    DisplayAlert(this.$swal);
+  },
 };
 </script>
 
