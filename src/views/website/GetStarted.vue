@@ -44,11 +44,10 @@
             </div>
             <div class="w-full md:w-1/3">
               <div class="m-2">
-                <label for="location_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location Type <span class="text-red-500">*</span></label>
-                <select name="location_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.location_type" required>
+                <label for="location_type_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location Type <span class="text-red-500">*</span></label>
+                <select name="location_type_id" @change="onSelectLocationType($event)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.location_type_id" required>
                   <option value="">Select Location Type</option>
-                  <option value="residential">Residential</option>
-                  <option value="commercial">Commercial</option>
+                  <option :value="location_type.id" v-for="location_type in location_types" v-bind:key="location_type.id">{{ location_type.name }}</option>
                 </select>
               </div>
             </div>
@@ -105,11 +104,9 @@
             <div class="w-full md:w-1/2">
               <div class="m-2">
                 <label for="service_plan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Service Plan <span class="text-red-500">*</span></label>
-                <select name="service_plan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.service_plan" required>
+                <select name="service_plan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="getStartedForm.service_plan_id" required>
                   <option value="">Select Service Plan</option>
-                  <option value="gold">Gold - 10,000</option>
-                  <option value="silver">Silver - 6,500</option>
-                  <option value="silver">Bronze - 3,500</option>
+                  <option :value="service_plan.id" v-for="service_plan in service_plans" v-bind:key="service_plan.id">{{ service_plan.name }} - {{ service_plan.quantity_per_week }} (₦{{ service_plan.service_charge }})</option>
                 </select>
               </div>
             </div>
@@ -192,6 +189,10 @@
   <script>
   import statesData from "../../data/states.json";
   import RegistrationService from "../../services/RegistrationService";
+  import LocationTypeService from "../../services/LocationTypeService";
+  import ServicePlanService from "../../services/ServicePlanService";
+  import router from "../../router";
+  import SetAlert from "../../functions/SetAlert";
   import _ from 'lodash';
   //import router from "../router";
   export default {
@@ -207,8 +208,8 @@
           address_2: "",
           state: "",
           local_government: "",
-          service_plan: "",
-          location_type: "",
+          service_plan_id: "",
+          location_type_id: "",
         },
         errorMessage: null,
         states: [],
@@ -217,6 +218,9 @@
         avatar: null,
         id_photo: null,
         signature: null,
+        location_types: [],
+        service_plans: [],
+        all_plans: [],
       };
     },
     mounted() {
@@ -224,6 +228,22 @@
         this.states.push(s.state);
         this.states.sort();
       });
+
+      LocationTypeService.index()
+        .then((response) => {
+          this.location_types = response.data;
+        })
+        .catch(
+          (error) => (this.loginErrorMessage = error.response.data.message)
+        );
+
+      ServicePlanService.index()
+        .then((response) => {
+          this.all_plans = response.data;
+        })
+        .catch(
+          (error) => (this.loginErrorMessage = error.response.data.message)
+        );
     },
     methods: {
       apply() {
@@ -237,10 +257,8 @@
         })
         RegistrationService.register(formData)
         .then((response) => {
-          //localStorage.setItem("bellwether_token", response.data.token);
-          //this.$store.dispatch("user", response.data.user);
-          //router.push("/app/dashboard");
-          console.log(response);
+          SetAlert("Saved", "Customer infomation added!", "success");
+          router.push("/");
         })
         .catch(
           (error) => (this.loginErrorMessage = error.response.data.message)
@@ -251,6 +269,15 @@
         statesData.forEach(s => {
           if (s.state == selectedState) {
             this.local_governments = s.lgas;
+          }
+        });
+      },
+      onSelectLocationType(event) {
+        this.service_plans = [];
+        let selectedLocationType = event.target.value;
+        this.all_plans.forEach(p => {
+          if (p.location_type_id == selectedLocationType) {
+            this.service_plans.push(p);
           }
         });
       },
